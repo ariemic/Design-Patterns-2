@@ -9,6 +9,7 @@ import rabaty.ObliczCenePoRabacie;
 
 public class Faktura {
 	private Konfiguracja konfiguracja;
+	private double rabat=0;
 
 	Date dataSprzedazy;
 	String kontrahent;
@@ -47,7 +48,7 @@ public class Faktura {
 		{
 			pozycja = iteratorPozycji.next();
 			double wartosc = pozycja.getWartosc();
-			suma+= konfiguracja.getObliczanieRabatu(wartosc);
+			suma+= konfiguracja.getObliczanieRabatu(wartosc, rabat);
 		}
 	}
 	public Iterator<Pozycja> getIteratorPozycji()
@@ -62,6 +63,9 @@ public class Faktura {
 	public void setKonfiguracja(Konfiguracja konfiguracja){
 		this.konfiguracja = konfiguracja;
 	}
-	
+
+	public void setRabat(double rabat){
+		this.rabat = rabat;
+	}
 	
 }

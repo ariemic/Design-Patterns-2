@@ -1,14 +1,15 @@
 package main;
 
-import java.util.Iterator;
-import java.util.Calendar;
-import magazyn.Towar;
-
 import dokumenty.Faktura;
+import dokumenty.Konfiguracja;
 import dokumenty.Pozycja;
-
-//ZEWNETRZNY RABAT
+import magazyn.Towar;
 import rabatlosowy.LosowyRabat;
+import rabaty.ObliczCenePoRabacie;
+import rabaty.ObliczCenePoRabacieKwotowym;
+
+import java.util.Calendar;
+import java.util.Iterator;
 
 
 public class Ui {
@@ -19,18 +20,25 @@ public class Ui {
 		//Tworzymy towary
 		Towar t1=new Towar(10,"buty");
 		Towar t2=new Towar(2,"skarpety");
-		
-		//I przykladowa fakture
-		Faktura f=new Faktura(teraz.getTime(),"Fido");
-		f.dodajPozycje(t1,3);
-		f.dodajPozycje(t2, 5);
-		
-		wypiszFakture(f);
 
-		
 		//TEST ZEWN. rabatu
 		LosowyRabat lr=new LosowyRabat();
-		System.out.println(lr.losujRabat());
+		double rabat = lr.losujRabat();
+		System.out.println(rabat);
+
+		//I przykladowa fakture
+		Faktura f=new Faktura(teraz.getTime(),"Fido");
+		f.setRabat(rabat);
+		Konfiguracja konfiguracja = Konfiguracja.getInstance();
+		konfiguracja.setCena(new ObliczCenePoRabacieKwotowym());
+		f.setKonfiguracja(konfiguracja);
+
+		f.dodajPozycje(t1,3);
+		f.dodajPozycje(t2, 5);
+
+		wypiszFakture(f);
+
+
 	}
 	private static void wypiszFakture(Faktura faktura)
 	{

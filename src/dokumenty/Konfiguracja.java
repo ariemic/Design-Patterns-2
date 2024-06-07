@@ -21,8 +21,8 @@ public class Konfiguracja {
         this.cena = cena;
     }
 
-    public double getObliczanieRabatu(double cenaPrzedRabatem){
-        return cena.obliczCenePoRabacie(cenaPrzedRabatem);
+    public double getObliczanieRabatu(double cenaPrzedRabatem, double rabat){
+        return cena.obliczCenePoRabacie(cenaPrzedRabatem, rabat);
     }
 
 }
