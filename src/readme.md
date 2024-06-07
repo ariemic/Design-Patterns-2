@@ -3,6 +3,3 @@
 tak samo w metodach dzięki temu możemy ograniczyć liczbę argumentów
 
 > Kolejna FASADA
-ddd
-> check
-> dafsd
