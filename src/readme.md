@@ -3,3 +3,5 @@
 tak samo w metodach dzięki temu możemy ograniczyć liczbę argumentów
 
 > Kolejna FASADA
+
+check if token works
