@@ -3,26 +3,43 @@ package dokumenty;
 import java.util.Iterator;
 
 
-//this is facade
-public class WydrukFaktury {
+//this is facade and base for template method
+public abstract class WydrukFaktury {
+    Faktura faktura;
 
-    public WydrukFaktury(){}
-
-
-    public void drukujFakture(Faktura faktura)
+    public final void drukujFakture()
     {
-        System.out.println("=====================================================");
-        System.out.println("FA z dnia: "+faktura.getDataSprzedazy().toString());
-        System.out.println("Wystawiona dla: "+faktura.getKontrahent());
-        System.out.println("Na kwote: "+faktura.getSuma());
+        drukujRozdzielnik();
+
+        drukujNaglowek();
+        drukujPozycje();
+        drukujStopke();
+
+        drukujRozdzielnik();
+
+
+    }
+
+    abstract void drukujNaglowek();
+    void drukujPozycje() {
+
         Iterator<Pozycja> iteratorPozycji=faktura.getIteratorPozycji();
         while(iteratorPozycji.hasNext())
         {
             Pozycja pozycja=iteratorPozycji.next();
             System.out.println("Towar: "+pozycja.getNazwa()+" Ilosc: "+pozycja.getIlosc()+" Wartosc:" + pozycja.getWartosc());
         }
+    }
+    abstract void drukujStopke();
+
+    void drukujRozdzielnik(){
         System.out.println("=====================================================");
     }
 
-
+    void setFaktura(Faktura faktura) {
+        this.faktura = faktura;
+    }
 }
+
+
+

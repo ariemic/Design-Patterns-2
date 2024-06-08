@@ -1,10 +1,8 @@
 package main;
 
-import dokumenty.Faktura;
-import dokumenty.WydrukFaktury;
+import dokumenty.*;
 import magazyn.Towar;
 import rabaty.ObliczCenePoRabacieKwotowym;
-
 import java.util.Calendar;
 
 
@@ -20,12 +18,17 @@ public class Ui {
 		//I przykladowa fakture
 		Faktura f=new Faktura(teraz.getTime(),"Fido");
 
-		f.setKonfiguracjaObliczaniaCeny(new ObliczCenePoRabacieKwotowym());
+
+		Konfiguracja konfiguracja = Konfiguracja.getInstance();
+		konfiguracja.setKonfiguracjaObliczaniaCeny(new ObliczCenePoRabacieKwotowym());
+		konfiguracja.setKonfiguracjaWydrukuFaktury(new SzalonyWydrukFaktury());
+		AdapterKonfiguracjaImp adapter = new AdapterKonfiguracjaImp(konfiguracja);
+		adapter.setFaktura(f);
 		f.dodajPozycje(t1,3);
 		f.dodajPozycje(t2, 5);
 
-		WydrukFaktury wydrukFaktury = new WydrukFaktury();
-		wydrukFaktury.drukujFakture(f);
+		konfiguracja.getWydrukujFakture();
+
 
 
 	}

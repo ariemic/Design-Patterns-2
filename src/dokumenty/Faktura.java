@@ -60,14 +60,8 @@ public class Faktura {
 		return this.kontrahent;
 	}
 
-	private void setKonfiguracja(Konfiguracja konfiguracja){
+
+	public void setKonfiguracja(Konfiguracja konfiguracja) {
 		this.konfiguracja = konfiguracja;
-
-	}
-
-	public void setKonfiguracjaObliczaniaCeny(ObliczCenePoRabacie konfiguracjaObliczaniaCeny) {
-		Konfiguracja konfiguracja = Konfiguracja.getInstance();
-		konfiguracja.setKonfiguracjaObliczaniaCeny(konfiguracjaObliczaniaCeny); //ustawianie konfiguracji rabatu
-		this.setKonfiguracja(konfiguracja);
 	}
 }
