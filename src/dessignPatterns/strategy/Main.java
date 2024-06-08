@@ -1,4 +1,4 @@
-package dessignPatterns;
+package dessignPatterns.strategy;
 
 import dessignPatterns.strategy.chef.Chef;
 import dessignPatterns.strategy.chef.egg.cooker.HardBoiledEggCooker;
