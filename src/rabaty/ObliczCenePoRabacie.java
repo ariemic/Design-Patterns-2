@@ -4,5 +4,6 @@ import rabatlosowy.LosowyRabat;
 
 public interface ObliczCenePoRabacie {
 	LosowyRabat losowyRabat = new LosowyRabat();
-	double obliczCenePoRabacie(double cena, double rabat);
+	double rabat = losowyRabat.losujRabat();
+	double obliczCenePoRabacie(double cena);
 }

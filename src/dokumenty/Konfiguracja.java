@@ -17,12 +17,12 @@ public class Konfiguracja {
         return instance;
     }
 
-    public void setCena(ObliczCenePoRabacie cena) {
+    public void setKonfiguracjaObliczaniaCeny(ObliczCenePoRabacie cena) {
         this.cena = cena;
     }
 
-    public double getObliczanieRabatu(double cenaPrzedRabatem, double rabat){
-        return cena.obliczCenePoRabacie(cenaPrzedRabatem, rabat);
+    public double getObliczanieRabatu(double cenaPrzedRabatem){
+        return cena.obliczCenePoRabacie(cenaPrzedRabatem);
     }
 
 }
