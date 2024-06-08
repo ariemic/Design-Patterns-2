@@ -3,9 +3,9 @@ package main;
 import dokumenty.Faktura;
 import dokumenty.Konfiguracja;
 import dokumenty.Pozycja;
+import dokumenty.WydrukFaktury;
 import magazyn.Towar;
 import rabatlosowy.LosowyRabat;
-import rabaty.ObliczCenePoRabacie;
 import rabaty.ObliczCenePoRabacieKwotowym;
 
 import java.util.Calendar;
@@ -21,7 +21,7 @@ public class Ui {
 		Towar t1=new Towar(10,"buty");
 		Towar t2=new Towar(2,"skarpety");
 
-		//TEST ZEWN. rabatu
+		//todo TEST ZEWN. rabatu -> trzeba to przenieść do konfiguracji, tak aby klient nie mógł sam losować rabatu
 		LosowyRabat lr=new LosowyRabat();
 		double rabat = lr.losujRabat();
 		System.out.println(rabat);
@@ -32,27 +32,14 @@ public class Ui {
 		Konfiguracja konfiguracja = Konfiguracja.getInstance();
 		konfiguracja.setCena(new ObliczCenePoRabacieKwotowym());
 		f.setKonfiguracja(konfiguracja);
-
 		f.dodajPozycje(t1,3);
 		f.dodajPozycje(t2, 5);
 
-		wypiszFakture(f);
+		WydrukFaktury wydrukFaktury = new WydrukFaktury();
+		wydrukFaktury.drukujFakture(f);
 
 
 	}
-	private static void wypiszFakture(Faktura faktura)
-	{
-		System.out.println("=====================================================");
-		System.out.println("FA z dnia: "+faktura.getDataSprzedazy().toString());
-		System.out.println("Wystawiona dla: "+faktura.getKontrahent());
-		System.out.println("Na kwote: "+faktura.getSuma());
-		Iterator<Pozycja> iteratorPozycji=faktura.getIteratorPozycji();
-		while(iteratorPozycji.hasNext())
-		{
-			Pozycja pozycja=iteratorPozycji.next();
-			System.out.println("Towar: "+pozycja.getNazwa()+" Ilosc: "+pozycja.getIlosc()+" Wartosc:" + pozycja.getWartosc());
-		}
-		System.out.println("=====================================================");
-	}
+
 
 }
