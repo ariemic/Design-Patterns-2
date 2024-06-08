@@ -8,6 +8,7 @@ public class WydrukFaktury {
 
     public WydrukFaktury(){}
 
+
     public void drukujFakture(Faktura faktura)
     {
         System.out.println("=====================================================");

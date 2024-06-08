@@ -5,7 +5,7 @@ import rabaty.ObliczCenePoRabacie;
 public class Konfiguracja {
     //implement as singleton
     private static Konfiguracja instance;
-    private ObliczCenePoRabacie cena;
+    private ObliczCenePoRabacie konfiguracjaObliczaniaCeny;
     private Konfiguracja(){}
 
     public static Konfiguracja getInstance(){
@@ -17,12 +17,12 @@ public class Konfiguracja {
         return instance;
     }
 
-    public void setKonfiguracjaObliczaniaCeny(ObliczCenePoRabacie cena) {
-        this.cena = cena;
+    public void setKonfiguracjaObliczaniaCeny(ObliczCenePoRabacie konfiguracjaObliczaniaCeny) {
+        this.konfiguracjaObliczaniaCeny = konfiguracjaObliczaniaCeny;
     }
 
     public double getObliczanieRabatu(double cenaPrzedRabatem){
-        return cena.obliczCenePoRabacie(cenaPrzedRabatem);
+        return konfiguracjaObliczaniaCeny.obliczCenePoRabacie(cenaPrzedRabatem);
     }
 
 }

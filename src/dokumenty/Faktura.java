@@ -5,6 +5,7 @@ import java.util.Date;
 
 import magazyn.Towar;
 import rabaty.ObliczCenePoRabacie;
+import rabaty.ObliczCenePoRabacieKwotowym;
 
 
 public class Faktura {
@@ -59,10 +60,14 @@ public class Faktura {
 		return this.kontrahent;
 	}
 
-	public void setKonfiguracja(Konfiguracja konfiguracja){
+	private void setKonfiguracja(Konfiguracja konfiguracja){
 		this.konfiguracja = konfiguracja;
+
 	}
 
-
-	
+	public void setKonfiguracjaObliczaniaCeny(ObliczCenePoRabacie konfiguracjaObliczaniaCeny) {
+		Konfiguracja konfiguracja = Konfiguracja.getInstance();
+		konfiguracja.setKonfiguracjaObliczaniaCeny(konfiguracjaObliczaniaCeny); //ustawianie konfiguracji rabatu
+		this.setKonfiguracja(konfiguracja);
+	}
 }

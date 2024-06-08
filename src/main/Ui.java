@@ -1,7 +1,6 @@
 package main;
 
 import dokumenty.Faktura;
-import dokumenty.Konfiguracja;
 import dokumenty.WydrukFaktury;
 import magazyn.Towar;
 import rabaty.ObliczCenePoRabacieKwotowym;
@@ -20,10 +19,8 @@ public class Ui {
 
 		//I przykladowa fakture
 		Faktura f=new Faktura(teraz.getTime(),"Fido");
-		Konfiguracja konfiguracja = Konfiguracja.getInstance();
-		konfiguracja.setKonfiguracjaObliczaniaCeny(new ObliczCenePoRabacieKwotowym()); //ustawianie konfiguracji rabatu
-		f.setKonfiguracja(konfiguracja);
 
+		f.setKonfiguracjaObliczaniaCeny(new ObliczCenePoRabacieKwotowym());
 		f.dodajPozycje(t1,3);
 		f.dodajPozycje(t2, 5);
 
