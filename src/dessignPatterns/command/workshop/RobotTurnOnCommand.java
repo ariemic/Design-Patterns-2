@@ -12,8 +12,4 @@ public class RobotTurnOnCommand implements Command {
         robot.turnOn();
     }
 
-    @Override
-    public void undo() {
-        robot.turnOff();
-    }
 }
