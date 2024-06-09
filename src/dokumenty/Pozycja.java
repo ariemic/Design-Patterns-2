@@ -1,15 +1,15 @@
 package dokumenty;
 
-import magazyn.Towar;
+import magazyn.Kategoria;
 
 public class Pozycja {
-	private Towar towar;
+	private Kategoria towar;
 	private double cena;
 	private double ilosc;
 	private double wartosc;
 	private String nazwa;
 
-	public Pozycja(Towar towar, double ilosc) {
+	public Pozycja(Kategoria towar, double ilosc) {
 		this.towar = towar;
 		this.ilosc = ilosc;
 		this.cena = towar.getCena();
@@ -17,7 +17,7 @@ public class Pozycja {
 		this.przeliczWartosc();
 	}
 
-	public void setTowar(Towar towar) {
+	public void setTowar(Kategoria towar) {
 		this.towar = towar;
 		this.cena = towar.getCena();
 		this.przeliczWartosc();

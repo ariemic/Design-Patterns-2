@@ -1,9 +1,13 @@
 package dokumenty;
 
+import magazyn.KontenerTowar;
+
 public class AdapterKonfiguracjaImp implements AdapterKonfiguracja {
     private Konfiguracja konfiguracja;
-    public AdapterKonfiguracjaImp(Konfiguracja konfiguracja) {
+    private KontenerTowar kontener;
+    public AdapterKonfiguracjaImp(Konfiguracja konfiguracja, KontenerTowar kontener) {
         this.konfiguracja = konfiguracja;
+        this.kontener = kontener;
     }
 
 
@@ -11,6 +15,7 @@ public class AdapterKonfiguracjaImp implements AdapterKonfiguracja {
     public void setFaktura(Faktura f) {
         konfiguracja.setFaktura(f);
         f.setKonfiguracja(konfiguracja);
+        f.setKontener(kontener);
     }
 
 

@@ -3,13 +3,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Date;
 
-import magazyn.Towar;
-import rabaty.ObliczCenePoRabacie;
-import rabaty.ObliczCenePoRabacieKwotowym;
+import magazyn.Kategoria;
+import magazyn.KontenerTowar;
 
 
 public class Faktura {
 	private Konfiguracja konfiguracja;
+	private KontenerTowar kontener;
 
 	Date dataSprzedazy;
 	String kontrahent;
@@ -24,11 +24,15 @@ public class Faktura {
 	}
 
 
-	public void dodajPozycje(Towar towar, double ilosc)
+	public void dodajPozycje(Kategoria kategoria, double ilosc)
 	{
-		pozycje.add(new Pozycja(towar,ilosc));
+		double suma = kontener.getCena();
+
+		pozycje.add(new Pozycja(kategoria,ilosc));
 		this.przeliczSume();
 	}
+
+
 	public double getSuma()
 	{
 		return suma;
@@ -63,5 +67,9 @@ public class Faktura {
 
 	public void setKonfiguracja(Konfiguracja konfiguracja) {
 		this.konfiguracja = konfiguracja;
+	}
+
+	public void setKontener(KontenerTowar kontener) {
+		this.kontener = kontener;
 	}
 }
