@@ -1,4 +1,4 @@
-package dokumenty;
+package faktury.dokumenty;
 
 import java.util.Iterator;
 

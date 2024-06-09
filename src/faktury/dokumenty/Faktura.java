@@ -1,10 +1,10 @@
-package dokumenty;
+package faktury.dokumenty;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Date;
 
-import magazyn.Kategoria;
-import magazyn.KontenerTowar;
+import faktury.magazyn.Kategoria;
+import faktury.magazyn.KontenerTowar;
 
 
 public class Faktura {

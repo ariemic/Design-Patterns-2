@@ -1,4 +1,4 @@
-package magazyn;
+package faktury.magazyn;
 
 public class Wypoczynek extends Kategoria{
     public Wypoczynek(double cena, String nazwa) {

@@ -1,6 +1,6 @@
-package rabaty;
+package faktury.rabaty;
 
-import rabatlosowy.LosowyRabat;
+import faktury.rabatlosowy.LosowyRabat;
 
 public interface ObliczCenePoRabacie {
 	LosowyRabat losowyRabat = new LosowyRabat();

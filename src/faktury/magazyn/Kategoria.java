@@ -1,4 +1,4 @@
-package magazyn;
+package faktury.magazyn;
 
 abstract public class Kategoria implements Towar{
 	private double cena;

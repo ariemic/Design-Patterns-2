@@ -1,4 +1,4 @@
-package magazyn;
+package faktury.magazyn;
 
 public interface Towar {
         double getCena();

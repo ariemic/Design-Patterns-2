@@ -1,6 +1,6 @@
-package dokumenty;
+package faktury.dokumenty;
 
-import magazyn.Kategoria;
+import faktury.magazyn.Kategoria;
 
 public class Pozycja {
 	private Kategoria towar;

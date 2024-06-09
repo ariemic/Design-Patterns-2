@@ -1,4 +1,4 @@
-package dokumenty;
+package faktury.dokumenty;
 
 public class SzalonyWydrukFaktury extends KlasycznyWydrukFaktury {
 

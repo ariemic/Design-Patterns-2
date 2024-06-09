@@ -1,8 +1,8 @@
-package main;
+package faktury.main;
 
-import dokumenty.*;
-import magazyn.*;
-import rabaty.ObliczCenePoRabacieKwotowym;
+import faktury.dokumenty.*;
+import faktury.magazyn.*;
+import faktury.rabaty.ObliczCenePoRabacieKwotowym;
 import java.util.Calendar;
 
 

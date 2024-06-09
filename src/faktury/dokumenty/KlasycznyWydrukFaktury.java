@@ -1,6 +1,4 @@
-package dokumenty;
-
-import java.util.Iterator;
+package faktury.dokumenty;
 
 public class KlasycznyWydrukFaktury  extends WydrukFaktury{
 

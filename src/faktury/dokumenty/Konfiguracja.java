@@ -1,6 +1,6 @@
-package dokumenty;
+package faktury.dokumenty;
 
-import rabaty.ObliczCenePoRabacie;
+import faktury.rabaty.ObliczCenePoRabacie;
 
 public class Konfiguracja {
     //implement as singleton

@@ -1,4 +1,4 @@
-package magazyn;
+package faktury.magazyn;
 
 import java.util.ArrayList;
 import java.util.Arrays;

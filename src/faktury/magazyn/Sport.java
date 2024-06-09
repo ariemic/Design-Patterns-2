@@ -1,4 +1,4 @@
-package magazyn;
+package faktury.magazyn;
 
 public class Sport extends Kategoria{
     public Sport(double cena, String nazwa) {

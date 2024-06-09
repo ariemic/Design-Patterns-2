@@ -1,4 +1,4 @@
-package rabaty;
+package faktury.rabaty;
 
 public class ObliczCenePoRabacieProcentowym implements ObliczCenePoRabacie {
 

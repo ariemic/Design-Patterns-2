@@ -1,6 +1,6 @@
-package dokumenty;
+package faktury.dokumenty;
 
-import magazyn.KontenerTowar;
+import faktury.magazyn.KontenerTowar;
 
 public class AdapterKonfiguracjaImp implements AdapterKonfiguracja {
     private Konfiguracja konfiguracja;

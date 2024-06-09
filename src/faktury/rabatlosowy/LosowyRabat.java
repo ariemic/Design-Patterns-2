@@ -1,4 +1,4 @@
-package rabatlosowy;
+package faktury.rabatlosowy;
 
 import java.util.Random;
 
